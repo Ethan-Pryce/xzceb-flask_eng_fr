@@ -3,7 +3,7 @@ Unit test for translator.py
 """
 
 import unittest
-#from translator import englishToFrench
+from translator import *
 
 
 class TestTranslations(unittest.TestCase):
@@ -25,6 +25,13 @@ class TestTranslations(unittest.TestCase):
 
     def test_fr_poem(self):
         self.assertEqual(frenchToEnglish(self.french_poem),self.english_poem)
+
+    #Failed Asserts
+    def test_en_dog(self):
+        self.assertNotEqual(englishToFrench("dog"), "chat")
+
+    def test_fr_dog(self):
+        self.assertNotEqual(frenchToEnglish("chien"), "cat")
 
 
 if __name__ == '__main__':
